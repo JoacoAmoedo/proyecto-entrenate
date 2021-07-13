@@ -1,0 +1,178 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+
+  /*
+  naranja: #ff9f1c;
+  naranjita: #ffbf69;
+  blanco: #ffffff;
+  celestito: #cbf3f0;
+  turquesa: #2ec4b6;
+  */
+
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 2fr);
+    grid-template-areas:
+    "header"
+    "main"
+    "nav"
+    "footer";
+    height: 100vh;
+    border: 0%;
+  
+  }
+
+/* Código del header*/
+
+  .header{
+    background: linear-gradient(to right, rgb(240, 152, 25), rgb(237, 222, 93));
+   text-align: center;
+   align-content: center;
+   grid-area: "header";
+   height: 250px;
+ }
+ 
+ 
+ .t-stroke {
+     color: white;
+     -moz-text-stroke-width: 2px;
+     -webkit-text-stroke-width: 2px;
+     -moz-text-stroke-color: #000000;
+     -webkit-text-stroke-color: #ffffff;
+     font-family: 'Comfortaa';
+     font-size: 45px;
+     padding-bottom: 0px;
+    
+  }
+ 
+ .t-shadow-halftone2 {
+     position: relative;
+     justify-items: center;
+     align-items: center;
+     padding-top: 45px;
+     padding-bottom: 0px;
+ }
+ 
+ /* Código del main*/
+
+  .main {
+    display: grid;
+    color: black;
+    font-size: 45px;
+    font-family: 'Comfortaa';
+    background-image: url(medicina.jpg);
+    font-style: initial;
+    justify-items: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0%;
+  }
+  
+   /* Código de los botones*/
+    .nav {
+      display: grid;
+      list-style: none;
+      grid-template-columns: 20% 20% 20% 20% 20%;
+      justify-items: center;
+      background-color: #cbf3f0;
+      justify-items: center;
+      align-items: center;
+      padding: 20px;
+      font-family: 'Comfortaa';
+      }
+
+  
+      .btn-flip {
+        opacity: 1;
+        outline: 0;
+        line-height: 40px;
+        color: #323237;
+        position: relative;
+        text-align: center;
+        letter-spacing: 1px;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: 20px;
+        font-family: 'Comfortaa';
+     }
+      .btn-flip:hover:after {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+     }
+      .btn-flip:hover:before {
+        opacity: 0;
+        transform: translateY(50%) rotateX(90deg);
+     }
+      .btn-flip:after {
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        display: block;
+        transition: 0.5s;
+        position: absolute;
+        background: #adadaf;
+        content: attr(data-back);
+        transform: translateY(-50%) rotateX(90deg);
+     }
+      .btn-flip:before {
+        top: 0;
+        left: 0;
+        opacity: 1;
+        display: block;
+        padding: 0 30px;
+        line-height: 40px;
+        transition: 0.5s;
+        position: relative;
+        background: #eca130;
+        content: attr(data-front);
+        transform: translateY(0) rotateX(0);
+     }
+
+     /* Código del footer*/
+  
+     footer {
+      display: grid;
+      grid-area: "footer";
+      padding: 0px;
+      font-size: 15px;
+      font-family: 'Comfortaa';
+      background-color: #2ec4b6;
+      justify-items: center;
+      align-items: center;
+      height: 100px;
+    }
+  
+    p {
+      display: grid;
+      padding-bottom: 10px;
+      font-size: 15px;
+      font-family: 'Comfortaa';
+      justify-items: center;
+      align-items: center;
+    }
+  
+  @media (max-width: 600px) {
+    body {
+      grid-template-columns: 1fr;
+      grid-template-rows: 10vh 20vh 70vh 40vh;
+      grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "aside"
+      ;
+    }
+
+    footer {
+      display: none;
+    }
+  }
